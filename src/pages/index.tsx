@@ -24,7 +24,7 @@ const Home: NextPage = () => {
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          backgroundImage: `url('img/background1.png')`,
+          backgroundImage: `url('img/background2.png')`,
         }}
       >
         {/* Increase the priority of the hero background image */}

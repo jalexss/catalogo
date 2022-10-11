@@ -26,8 +26,10 @@ export const ApplicationWrapper: FC<PropsWithChildren<TProps>> = ({children, tit
       </Head>
       <Navbar />
       <main 
-        style={{
-          padding: '0px 20px',
+         style={{
+          margin: '30px auto',
+          maxWidth: '1440px',
+          padding: '0px 30px'
         }} 
       >
         {children}
