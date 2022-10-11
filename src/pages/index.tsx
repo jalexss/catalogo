@@ -16,9 +16,9 @@ const Home: NextPage = () => {
           backgroundColor: 'grey.800',
           color: '#fff',
           display: 'flex',
-          height: '529px',
+          height: '100vh',
           justifyContent: 'center',
-          mb: 4,
+          mb: 1,
           position: 'relative',
           width: '100%',
           backgroundSize: 'cover',
@@ -26,10 +26,7 @@ const Home: NextPage = () => {
           backgroundPosition: 'center',
           backgroundImage: `url('img/background2.png')`,
         }}
-      >
-        {/* Increase the priority of the hero background image */}
-        {/* {<img style={{ display: 'none' }} src='img/background1.png' alt="imagen referente a League of legends" />} */}
-      
+      >    
         <Box
           sx={{
             position: 'absolute',
