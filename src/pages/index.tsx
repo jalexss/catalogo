@@ -12,10 +12,15 @@ const Home: NextPage = () => {
     >
       <Paper
         sx={{
-          position: 'relative',
+          alignItems: 'center',
           backgroundColor: 'grey.800',
           color: '#fff',
+          display: 'flex',
+          height: '529px',
+          justifyContent: 'center',
           mb: 4,
+          position: 'relative',
+          width: '100%',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -23,7 +28,7 @@ const Home: NextPage = () => {
         }}
       >
         {/* Increase the priority of the hero background image */}
-        {<img style={{ display: 'none' }} src='img/background1.png' alt="imagen referente a League of legends" />}
+        {/* {<img style={{ display: 'none' }} src='img/background1.png' alt="imagen referente a League of legends" />} */}
       
         <Box
           sx={{
@@ -35,20 +40,21 @@ const Home: NextPage = () => {
             backgroundColor: 'rgba(0,0,0,.5)',
           }}
         />
-        <Grid container>
-          <Grid item xs={12}>
+        <Grid container id="container">
+          <Grid item xs={12} id="container-grid">
             <Box
+              id="container-box"
+              textAlign="center"
               sx={{
                 position: 'relative',
                 p: { xs: 3, md: 6 },
-                pr: { md: 0 },
               }}
             >
-              <Typography component="h1" variant="h2" color="inherit" >
+              <Typography component="h1" variant="h2" color="inherit" sx={{ mb: 1 }} >
                 Bienvenido a Rootlab - League of Legends
               </Typography>
               <Typography component="h1" variant="h3" color="error" >
-                Champion
+                Campeones
               </Typography>
             </Box>
           </Grid>

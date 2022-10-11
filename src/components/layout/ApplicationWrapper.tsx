@@ -15,10 +15,10 @@ export const ApplicationWrapper: FC<PropsWithChildren<TProps>> = ({children, tit
   return (
     <>
       <Head>
-        <title>{title ||'Champion-LoL App'}</title>
+        <title>{title ||'Campeones-LoL App'}</title>
         <meta name="author" content="Jesus Soledad" />
         <meta name="description" content={description} />
-        <meta name="keywords" content={`${title}, champion, League Of Legends`} />
+        <meta name="keywords" content={`${title}, campeones, League of Legends`} />
 
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
