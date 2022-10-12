@@ -7,56 +7,61 @@ const Home: NextPage = () => {
 
   return (
     <ApplicationWrapper
-      title="Home" 
+      title="Home - RootLab - Lol Champion" 
       description="Home of the RootLab League of legends - champions"
     >
-      <Paper
-        sx={{
-          alignItems: 'center',
-          backgroundColor: 'grey.800',
-          color: '#fff',
-          display: 'flex',
-          height: '100vh',
-          justifyContent: 'center',
-          mb: 1,
-          position: 'relative',
-          width: '100%',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          backgroundImage: `url('img/background2.png')`,
-        }}
-      >    
-        <Box
+      <Grid 
+        container 
+        width="100%" 
+        height='calc(100vh - 10rem)'
+        justifyContent="center" 
+      > 
+        <Paper
           sx={{
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            right: 0,
-            left: 0,
-            backgroundColor: 'rgba(0,0,0,.5)',
+            alignItems: 'center',
+            backgroundColor: 'grey.800',
+            color: '#fff',
+            display: 'flex',
+            justifyContent: 'center',
+            mb: 1,
+            position: 'relative',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundImage: `url('img/background2.png')`,
           }}
-        />
-        <Grid container id="container">
-          <Grid item xs={12} id="container-grid">
-            <Box
-              id="container-box"
-              textAlign="center"
-              sx={{
-                position: 'relative',
-                p: { xs: 3, md: 6 },
-              }}
-            >
-              <Typography component="h1" variant="h2" color="inherit" sx={{ mb: 1 }} >
-                Bienvenido a Rootlab - League of Legends
-              </Typography>
-              <Typography component="h1" variant="h3" color="error" >
-                Campeones
-              </Typography>
-            </Box>
+        >    
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              right: 0,
+              left: 0,
+              backgroundColor: 'rgba(0,0,0,.5)',
+            }}
+          />
+          <Grid container id="container">
+            <Grid item xs={12} id="container-grid">
+              <Box
+                id="container-box"
+                textAlign="center"
+                sx={{
+                  position: 'relative',
+                  p: { xs: 3, md: 6 },
+                }}
+              >
+                <Typography component="h1" variant="h2" color="inherit" sx={{ mb: 1 }} >
+                  Bienvenido a Rootlab - League of Legends
+                </Typography>
+                <Typography component="h1" variant="h3" color="error" >
+                  Campeones
+                </Typography>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Paper>
+        </Paper>
+      </Grid>
     </ApplicationWrapper>
   )
 }

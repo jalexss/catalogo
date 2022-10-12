@@ -1,8 +1,8 @@
-import { createTheme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
 import { red, grey } from "@mui/material/colors";
 
 
-export const customTheme = createTheme({
+const preCustomTheme = createTheme({
   palette: {
     background: {
       default: grey[500]
@@ -26,3 +26,6 @@ export const customTheme = createTheme({
     },
   }
 });
+
+
+export const customTheme = responsiveFontSizes(preCustomTheme)
