@@ -15,7 +15,7 @@ export const Navbar:FC = () => {
           <img 
             alt="Icon de League of Legends" 
             src="/img/IconLol.svg" 
-            style={{ width: '46px', height: '46px' }} 
+            style={{ width: '40px', height: '40px' }} 
           />
           
           <Box 

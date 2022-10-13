@@ -5,7 +5,7 @@ import { red, grey } from "@mui/material/colors";
 const preCustomTheme = createTheme({
   palette: {
     background: {
-      default: grey[500]
+      default: grey[700]
     },
     primary: {
       main: '#26a69a'
