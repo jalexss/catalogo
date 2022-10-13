@@ -10,13 +10,12 @@ interface TProps {
 
 export const ChampionList:FC<TProps> = ({ champions }) => {
 
-  console.log(champions)
-
   return (
     <Grid
       container
-      spacing={3}
       flexDirection="row"
+      spacing={3}
+      justifyContent="center"
     >
       {
         champions.map(champion => (
