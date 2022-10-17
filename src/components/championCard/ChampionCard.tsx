@@ -40,8 +40,8 @@ export const ChampionCard:FC<TProps> = ({ champion }) => {
             alt={champion.name}
           />
           <CardContent >
-            <Typography color="primary.light" align="center" component="h1" variant="h6" >{champion.title}</Typography>
-            <Typography color="primary" align="justify" component="h2" variant="body2" >{champion.blurb}</Typography>
+            <Typography color="primary" align="center" component="h1" variant="h6" >{champion.title}</Typography>
+            <Typography color="grey.50" align="justify" component="h2" variant="body2" >{champion.blurb}</Typography>
           </CardContent>
         </CardActionArea>
       </Card>
