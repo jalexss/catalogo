@@ -18,8 +18,9 @@ const ChampionInfoPage:FC<TProps> = ({ champion }) => {
       title={`Campeon - ${champion.name}`}
       description={`contenido acerca del campeon ${champion.name}`}
     >
-      <Grid container>
+      <Grid container justifyContent="center" direction='column' spacing={0}>
         <Champion champion={champion} />
+        {/* ChampionComments */}
       </Grid>
     </ApplicationWrapper>
   )
