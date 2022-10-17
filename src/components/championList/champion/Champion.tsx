@@ -1,7 +1,12 @@
 import { FC } from "react"
-import { Box, Grid, Rating, Stack, Typography } from "@mui/material"
 import { ChampionData } from "../../../interfaces";
-import { ChampionDefaultImage, ChampionDescription, ChampionInformation, ChampionAllyTips, ChampionEnemyTips } from "./";
+import { 
+  ChampionDefaultImage, 
+  ChampionDescription, 
+  ChampionInformation, 
+  ChampionAllyTips,
+  ChampionEnemyTips, 
+} from "./";
 
 
 interface TProps {
