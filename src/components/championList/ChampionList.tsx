@@ -14,7 +14,8 @@ export const ChampionList:FC<TProps> = ({ champions }) => {
     <Grid
       container
       flexDirection="row"
-      spacing={3}
+      rowSpacing={3}
+      columnSpacing={{ xs: 1, sm: 2, md: 3 }}
       justifyContent="center"
     >
       {

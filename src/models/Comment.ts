@@ -5,7 +5,7 @@ import { ICommentsList } from '../interfaces';
 const commentSchema = new Schema({
   championId: { type: String, required: true },
   comment: { type: String, required: true },
-  fullname: {type: String, required: true },
+  username: {type: String, required: true },
   email: { type: String, required: true },
 }, {
   timestamps: true

@@ -16,7 +16,7 @@ export const ChampionDescription:FC<TProps> = ({champion}) => {
       <Grid
         component="div"
         sx={{
-          width: { xs: '100%', md: 900 },
+          width: { xs: '100%', lg: '80%' },
           p: 2,
           border: 1,
           borderRadius: '10px',
@@ -25,7 +25,7 @@ export const ChampionDescription:FC<TProps> = ({champion}) => {
         }}
       >
         <Typography color="primary" component="h1" variant="h4" >{champion.name}, {champion.title}</Typography>
-        <Typography align="justify" color="grey.50" component="p" variant="body1" >{champion.lore}</Typography>
+        <Typography align="justify" component="p" variant="body1" >{champion.lore}</Typography>
       </Grid>
     </Grid>
   )

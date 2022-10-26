@@ -12,7 +12,7 @@ export interface ChampionData {
   key:         string;
   name:        string;
   title:       string;
-  image:       Image;
+  images:       Image;
   skins:       Skin[];
   lore:        string;
   blurb:       string;

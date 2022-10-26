@@ -4,7 +4,7 @@ import { AppBar, Box, Grid, Link, Toolbar, Typography } from "@mui/material"
 
 export const Navbar:FC = () => {
   return (
-    <AppBar position="static" color="secondary" >
+    <AppBar position="static" sx={{ backgroundColor: 'secondary.main'}} >
 
       <Toolbar>
         <Grid 

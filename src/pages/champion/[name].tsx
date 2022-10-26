@@ -1,18 +1,28 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { Grid } from "@mui/material"
 
 import { championApi } from "../../api";
 import { ApplicationWrapper } from "../../components/layout/ApplicationWrapper"
-import { IChampion, ChampionData, ChampionListResponse } from "../../interfaces";
+import { IChampion, ChampionData, ChampionListResponse, IComments } from "../../interfaces";
 import { Champion } from "../../components/championList/champion/Champion";
+import { ChampionComments } from "../../components/championList/championComments/ChampionComments";
+import { getCommentsByChampion } from "../../database";
 
 interface TProps {
   champion: ChampionData;
+  comments: IComments[];
 }
 
-const ChampionInfoPage:FC<TProps> = ({ champion }) => {
-  console.log(champion)
+const ChampionInfoPage:FC<TProps> = ({ champion, comments }) => {
+  //console.log(champion)
+  
+  useEffect(()=> {
+
+    //const previewChampId = localStorage.getItem(PreviewChamp) 
+    localStorage.setItem('ChampLastView', champion.id)
+  }, [])
+
   return (
     <ApplicationWrapper 
       title={`Campeon - ${champion.name}`}
@@ -20,7 +30,7 @@ const ChampionInfoPage:FC<TProps> = ({ champion }) => {
     >
       <Grid container justifyContent="center" direction='column' spacing={0}>
         <Champion champion={champion} />
-        {/* ChampionComments */}
+        <ChampionComments comments={comments} championId={champion.id} />
       </Grid>
     </ApplicationWrapper>
   )
@@ -41,6 +51,7 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
   }
 }
 
+
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { name } = params as { name: string };
@@ -50,7 +61,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     
     const championDetails = Object.values(data.data).map(champion=>({ 
       ...champion,
-      image: {
+      images: {
         default: `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`,
         loadingScreen: `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`,
       },
@@ -58,9 +69,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     const champion: ChampionData = championDetails[0] ;
 
+    const comments = await getCommentsByChampion(name);
+
     return {
       props: {
-        champion
+        champion,
+        comments
       }
     }
 

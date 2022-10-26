@@ -15,7 +15,7 @@ export const ChampionEnemyTips:FC<TProps> = ({ champion }) => {
       <Grid
         component="div"
         sx={{
-          width: { xs: '100%', md: 900 },
+          width: { xs: '100%', lg: '80%' },
           display: champion.enemytips.length > 0 ? 'block' : 'none',
           p: 2,
           border: 1,
@@ -31,7 +31,6 @@ export const ChampionEnemyTips:FC<TProps> = ({ champion }) => {
             <Typography
               key={index} 
               align="justify" 
-              color="grey.50" 
               component="p" 
               variant="body1"
               sx={{ mb: 1 }} 

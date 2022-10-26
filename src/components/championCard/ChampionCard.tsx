@@ -20,28 +20,39 @@ export const ChampionCard:FC<TProps> = ({ champion }) => {
   return (
     <Grid
       item
-      xs={10}
+      xs={12}
       sm={6}
-      md={4}
+      md={5}
       lg={4}
+      sx={{ display: champion ? 'flex' : 'none', justifyContent: 'center'}}
     >
       <Card 
         id={champion.name} 
-        sx={{ 
+        sx={{
+          display: champion ? 'flex' : 'none',
           maxWidth: 425, 
-          height: 425, 
+          height: '100%', 
           backgroundColor: 'secondary.main',
         }} >
         <CardActionArea onClick={onClick} >
           <CardMedia
             component="img"
+            width="100%"
             height="240"
             image={champion.image}
             alt={champion.name}
           />
           <CardContent >
-            <Typography color="primary" align="center" component="h1" variant="h6" >{champion.title}</Typography>
-            <Typography color="grey.50" align="justify" component="h2" variant="body2" >{champion.blurb}</Typography>
+            <Typography 
+              color="primary" 
+              align="center" 
+              component="h1" 
+              variant="h6"
+              sx={{ lineHeight: 1.1, }} 
+            >
+              {champion.name}, {champion.title}
+            </Typography>
+            <Typography align="justify" component="h2" variant="body2" >{champion.blurb}</Typography>
           </CardContent>
         </CardActionArea>
       </Card>

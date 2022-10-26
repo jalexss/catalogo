@@ -12,7 +12,7 @@ export const ChampionAllyTips:FC<TProps> = ({champion}) => {
       <Grid
         component="div"
         sx={{
-          width: { xs: '100%', md: 900 },
+          width: { xs: '100%', lg: '80%' },
           p: 2,
           display: champion.allytips.length > 0 ? 'block' : 'none',
           border: 1,
@@ -27,8 +27,7 @@ export const ChampionAllyTips:FC<TProps> = ({champion}) => {
           champion.allytips.map( (tip, index) => (
             <Typography
               key={index} 
-              align="justify" 
-              color="grey.50" 
+              align="justify"
               component="p" 
               variant="body1"
               sx={{ mb: 1 }} 
