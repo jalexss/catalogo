@@ -24,12 +24,12 @@ export const ChampionCard:FC<TProps> = ({ champion }) => {
       sm={6}
       md={5}
       lg={4}
-      sx={{ display: champion ? 'flex' : 'none', justifyContent: 'center'}}
+      sx={{ display: 'flex', justifyContent: 'center'}}
     >
       <Card 
         id={champion.name} 
         sx={{
-          display: champion ? 'flex' : 'none',
+          display: 'flex',
           maxWidth: 425, 
           height: '100%', 
           backgroundColor: 'secondary.main',

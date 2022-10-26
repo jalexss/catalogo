@@ -5,6 +5,7 @@ import { ApplicationWrapper } from "../../components/layout/ApplicationWrapper"
 import championApi from '../../api/championApi';
 import { ChampionListResponse, ChampionsData } from "../../interfaces";
 import { ChampionLastView } from "../../components/championLastView/ChampionLastView";
+import { Box } from "@mui/material";
 
 interface TProps {
   champions: ChampionsData[]; //TODO: CAMBIAR
@@ -16,8 +17,10 @@ const championPage: NextPage<TProps> = ({ champions }) => {
       title="Lista de los campeones" 
       description="Lista de los campeones del parche 12.19.1" 
     >
-      <ChampionLastView champions={champions} />
-      <ChampionList champions={champions} />
+      <Box sx={{ display: 'flex', flexDirection: 'column' }} >
+        <ChampionLastView champions={champions} />
+        <ChampionList champions={champions} />
+      </Box>
     </ApplicationWrapper>
   )
 }
