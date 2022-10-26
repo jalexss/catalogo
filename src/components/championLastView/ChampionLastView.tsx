@@ -11,7 +11,7 @@ interface TProps {
 
 export const ChampionLastView:FC<TProps> = ({champions}) => {
   
-  const [championLastView, setChampionLastView] = useState({})
+  const [championLastView, setChampionLastView] = useState(champions[0])
 
   const [checked, setChecked] = useState(false);
 
@@ -25,10 +25,10 @@ export const ChampionLastView:FC<TProps> = ({champions}) => {
 
     if(championLocalStorage) {
 
-      const champLastView: ChampionsData[] = champions.filter( champion => champion.id === championLocalStorage);
+      const lastView: ChampionsData[] = champions.filter( champion => champion.id === championLocalStorage);
       
       setChecked(true);
-      return setChampionLastView(champLastView[0])    
+      return setChampionLastView(lastView[0])    
     }
 
   }, [])

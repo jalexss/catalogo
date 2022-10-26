@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { useRouter } from "next/router";
 
-import { Card, CardActionArea, CardContent, CardMedia, Grid, Stack, Typography } from "@mui/material";
+import { Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 
 import { ChampionsData } from "../../interfaces";
 

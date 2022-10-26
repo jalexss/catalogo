@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react"
 import Head from "next/head"
-import { Navbar } from "../ui";
+import { Footer, Navbar } from "../ui";
 
 type TProps = {
   title: string,
@@ -34,7 +34,8 @@ export const ApplicationWrapper: FC<PropsWithChildren<TProps>> = ({children, tit
       >
         {children}
       </main>
-      <footer>
+      <Footer />
+      {/* <footer>
         <a
           href="https://rootstack.com/en"
           target="_blank"
@@ -42,7 +43,7 @@ export const ApplicationWrapper: FC<PropsWithChildren<TProps>> = ({children, tit
         >
           Powered by <span className="">Rootstack</span>
         </a>
-      </footer>
+      </footer> */}
     </>
   )
 }

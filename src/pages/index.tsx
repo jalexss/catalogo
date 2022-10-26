@@ -11,56 +11,37 @@ const Home: NextPage = () => {
       description="Home of the RootLab League of legends - champions"
     >
       <Grid 
-        container 
+        component="div" 
         width="100%" 
         height='calc(100vh - 10rem)'
-        justifyContent="center" 
+        sx={{
+          alignItems: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          position: 'relative',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundImage: `url('img/background1.png')`,
+        }}
       > 
-        <Paper
-          sx={{
-            alignItems: 'center',
-            backgroundColor: 'grey.800',
-            color: '#fff',
-            display: 'flex',
-            justifyContent: 'center',
-            mb: 1,
-            position: 'relative',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundImage: `url('img/background2.png')`,
-          }}
-        >    
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 0,
-              bottom: 0,
-              right: 0,
-              left: 0,
-              backgroundColor: 'rgba(0,0,0,.5)',
-            }}
-          />
-          <Grid container id="container">
-            <Grid item xs={12} id="container-grid">
+          <Grid container id="container" justifyContent="center">
               <Box
                 id="container-box"
                 textAlign="center"
                 sx={{
-                  position: 'relative',
-                  p: { xs: 3, md: 6 },
+                  width: '90%',
+                  p: 3,
                 }}
               >
-                <Typography component="h1" variant="h2" color="inherit" sx={{ mb: 1 }} >
-                  Bienvenido a Rootlab - League of Legends
+                <Typography component="h1" variant="h1" color="primary" sx={{ mb: 1 }} >
+                  Bienvenido a Rootlab League of Legends
                 </Typography>
                 <Typography component="h1" variant="h3" color="error" >
                   Campeones
                 </Typography>
               </Box>
-            </Grid>
           </Grid>
-        </Paper>
       </Grid>
     </ApplicationWrapper>
   )

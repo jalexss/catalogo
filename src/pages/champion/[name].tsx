@@ -19,7 +19,6 @@ const ChampionInfoPage:FC<TProps> = ({ champion, comments }) => {
   
   useEffect(()=> {
 
-    //const previewChampId = localStorage.getItem(PreviewChamp) 
     localStorage.setItem('ChampLastView', champion.id)
   }, [])
 
