@@ -24,17 +24,20 @@ export const ApplicationWrapper: FC<PropsWithChildren<TProps>> = ({children, tit
         <meta property="og:description" content={description} />
         <meta property="og:image" content={`${origin }/img/banner.jpg`} />
       </Head>
-      <Navbar />
-      <main 
-         style={{
-          margin: '30px auto',
-          maxWidth: '1440px',
-          padding: '0px 30px'
-        }} 
+      <div
+        style={{ height: '100%', display: 'flex', flexDirection: 'column'}}
       >
-        {children}
-      </main>
-      <Footer />
+        <Navbar />
+        <main 
+          style={{
+            flex: '1 0 auto',
+            padding: '1rem',
+          }} 
+        >
+          {children}
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }

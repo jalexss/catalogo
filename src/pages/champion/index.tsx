@@ -19,7 +19,7 @@ const championPage: NextPage<TProps> = ({ champions }) => {
     >
       <Box sx={{ display: 'flex', flexDirection: 'column' }} >
         <ChampionLastView champions={champions} />
-        <ChampionList champions={champions} />
+        <ChampionList allChampions={champions} />
       </Box>
     </ApplicationWrapper>
   )

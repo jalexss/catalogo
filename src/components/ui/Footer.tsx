@@ -4,12 +4,12 @@ import { Box, Grid, Typography } from "@mui/material"
 
 export const Footer:FC = () => {
   return (
-    <footer>
       <Box
         component="footer"
         sx={{
-          p: 2,
-          backgroundColor: 'secondary.main', 
+          p: '1rem',
+          backgroundColor: 'secondary.main',
+          flexShrink: '0px', 
         }}
       >
         <Grid 
@@ -18,6 +18,7 @@ export const Footer:FC = () => {
             display: 'flex', 
             flexDirection: 'column',
             textAlign: 'center',
+            
           }}
         >
           <Typography variant="body1">Campeones de League of Legends</Typography>
@@ -28,6 +29,5 @@ export const Footer:FC = () => {
           </Typography>
         </Grid>
       </Box>
-    </footer> 
   )
 }
