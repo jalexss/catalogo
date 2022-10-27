@@ -35,15 +35,6 @@ export const ApplicationWrapper: FC<PropsWithChildren<TProps>> = ({children, tit
         {children}
       </main>
       <Footer />
-      {/* <footer>
-        <a
-          href="https://rootstack.com/en"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <span className="">Rootstack</span>
-        </a>
-      </footer> */}
     </>
   )
 }

@@ -1,6 +1,5 @@
 import { FC } from "react"
-import NextLink from "next/link"
-import { Box, Grid, Link, Typography } from "@mui/material"
+import { Box, Grid, Typography } from "@mui/material"
 
 
 export const Footer:FC = () => {

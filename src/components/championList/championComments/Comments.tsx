@@ -24,7 +24,7 @@ export const Comments:FC<Props> = ({ comments }) => {
     <Grid 
       item
       xs={12}
-      sx={{ my: 2, display: 'flex', justifyContent: 'center'}}
+      sx={{ mt: 2, mb: 1, display: 'flex', justifyContent: 'center'}}
     >
       <Grid
         component="div"
@@ -44,13 +44,28 @@ export const Comments:FC<Props> = ({ comments }) => {
           </Button>
         </Stack>
         <Collapse in={checked}>
-        <Box>
-          {
-            comments.map( (comment, index) => (
-              <CommentsList  key={index} comment={comment}/>
-            ))
-          }
-        </Box>
+          <Box sx={{ display: comments.length > 0 ? 'block' : 'none' }} >
+            {
+              comments.map( (comment, index) => (
+                <CommentsList  key={index} comment={comment}/>
+              ))
+            }
+          </Box>
+          <Box sx={{ display: comments.length < 1 ? 'block' : 'none'}}>
+            <Box 
+              sx={{
+                py: 1,
+                px: 2,
+                my: 2,
+                backgroundColor: 'secondary.dark', 
+                borderRadius: '10px',
+              }}
+            >
+              <Typography component="h5" variant="h6" color="primary">
+                No hay comentarios!.
+              </Typography>
+            </Box>
+          </Box>
         </Collapse>
       </Grid>
     </Grid>
