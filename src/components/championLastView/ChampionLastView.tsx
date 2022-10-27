@@ -31,7 +31,7 @@ export const ChampionLastView:FC<TProps> = ({champions}) => {
       return setChampionLastView(lastView[0])    
     }
 
-  }, [])
+  }, [champions])
 
   return (
     <Grid container justifyContent="center" sx={{ mb: 2 }}>

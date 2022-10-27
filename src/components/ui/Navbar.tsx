@@ -12,7 +12,8 @@ export const Navbar:FC = () => {
           justifyContent='flex-start'
           alignItems="center"
         >
-          <img 
+          <Box
+            component="img" 
             alt="Icon de League of Legends" 
             src="/svg/IconLol.svg" 
             style={{ width: '40px', height: '40px' }} 

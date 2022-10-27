@@ -19,7 +19,7 @@ const ChampionInfoPage:FC<TProps> = ({ champion, comments }) => {
   useEffect(()=> {
 
     localStorage.setItem('ChampLastView', champion.id)
-  }, [])
+  }, [champion.id])
 
   return (
     <ApplicationWrapper 

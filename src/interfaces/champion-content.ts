@@ -20,7 +20,7 @@ export interface ChampionData {
   enemytips:   string[];
   tags:        string[];
   partype:     string;
-  info:        Info;
+  info:        InfoChamp;
   stats:       { [key: string]: number };
   spells:      Spell[];
   passive:     Passive;
@@ -32,7 +32,7 @@ export interface Image {
   loadingScreen: string,
 }
 
-export interface Info {
+export interface InfoChamp {
   attack:     number;
   defense:    number;
   magic:      number;
