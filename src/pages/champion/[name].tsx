@@ -45,7 +45,7 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
     paths: championNames.map( name => ({
       params: { name }
     })),
-    fallback: true,
+    fallback: 'blocking',
   }
 }
 
