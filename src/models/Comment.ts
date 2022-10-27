@@ -1,5 +1,5 @@
 import mongoose, { Model, Schema } from 'mongoose'
-import { ICommentsList } from '../interfaces';
+import { IComments } from '../interfaces';
 
 
 const commentSchema = new Schema({
@@ -12,6 +12,6 @@ const commentSchema = new Schema({
 });
 
 
-const CommentModel: Model<ICommentsList> = mongoose.models.Comment || mongoose.model('Comment', commentSchema );
+const CommentModel: Model<IComments> = mongoose.models.Comment || mongoose.model('Comment', commentSchema );
 
 export default CommentModel;
