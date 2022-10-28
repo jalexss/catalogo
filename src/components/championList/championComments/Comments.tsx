@@ -12,14 +12,6 @@ interface Props {
 }
 
 export const Comments:FC<Props> = ({ comments }) => {
-
-  const [checked, setChecked] = useState(false);
-
-  const handleClick = () => {
-
-    setChecked(!checked)
-  }
-
   return (
     <Grid 
       item
@@ -39,34 +31,29 @@ export const Comments:FC<Props> = ({ comments }) => {
       >
         <Stack direction="row" alignItems="center" justifyContent="space-between" >
           <Typography component="h2" variant="h4">Todos los comentarios</Typography>
-          <Button onClick={ handleClick } size="large" endIcon={ checked ? <KeyboardArrowUp /> : <KeyboardArrowDown /> }>
-            { checked ? "Ocultar" :  "Mostrar" }
-          </Button>
         </Stack>
-        <Collapse in={checked}>
-          <Box sx={{ display: comments.length > 0 ? 'block' : 'none' }} >
-            {
-              comments.map( (comment, index) => (
-                <CommentsList  key={index} comment={comment}/>
-              ))
-            }
+        <Box sx={{ display: comments.length > 0 ? 'block' : 'none' }} >
+          {
+            comments.map( (comment, index) => (
+              <CommentsList  key={index} comment={comment}/>
+            ))
+          }
+        </Box>
+        <Box sx={{ display: comments.length < 1 ? 'block' : 'none'}}>
+          <Box 
+            sx={{
+              py: 1,
+              px: 2,
+              my: 2,
+              backgroundColor: 'secondary.dark', 
+              borderRadius: '10px',
+            }}
+          >
+            <Typography component="h5" variant="h6" color="primary">
+              No hay comentarios!.
+            </Typography>
           </Box>
-          <Box sx={{ display: comments.length < 1 ? 'block' : 'none'}}>
-            <Box 
-              sx={{
-                py: 1,
-                px: 2,
-                my: 2,
-                backgroundColor: 'secondary.dark', 
-                borderRadius: '10px',
-              }}
-            >
-              <Typography component="h5" variant="h6" color="primary">
-                No hay comentarios!.
-              </Typography>
-            </Box>
-          </Box>
-        </Collapse>
+        </Box>
       </Grid>
     </Grid>
   )

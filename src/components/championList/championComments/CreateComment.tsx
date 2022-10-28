@@ -15,8 +15,6 @@ export const CreateComment:FC<Props> = ({ championId }) => {
 
   const router = useRouter();
 
-  const [checked, setChecked] = useState(false);
-
   const [ inputValues, handleInputChange, valuesWithLength ] = useForm({
     comment: '',
     username: '',
@@ -45,16 +43,11 @@ export const CreateComment:FC<Props> = ({ championId }) => {
     try {
       const { data }  = await comentariosApi.post<IComment>(`/comments`, newData);
       if( data.ok ) {
-        router.reload();
+        router.push(`/champion/${championId}`);
       }
     } catch (error) {
       console.log(error)
     }
-  }
-
-  const handleClick = () => {
-
-    setChecked(!checked)
   }
 
   useEffect(() => {
@@ -86,78 +79,70 @@ export const CreateComment:FC<Props> = ({ championId }) => {
           backgroundColor: 'secondary.main'
         }}
       >
+        <Typography component="h3" variant="h4">Quieres comentar algo?</Typography>
 
-        <Stack direction="row" alignItems="center" justifyContent="space-between" >
-          <Typography component="h3" variant="h4">Quieres comentar algo?</Typography>
-          <Button onClick={ handleClick } size="large" endIcon={ checked ? <KeyboardArrowUp /> : <KeyboardArrowDown /> }>
-            { checked ? "Ocultar" :  "Mostrar" }
-          </Button>
-        </Stack>
-        
-        <Collapse in={checked}>
-          <TextField
-            name="comment"
-            variant="filled"
-            color="success"
-            multiline
-            rows={3}
-            fullWidth
-            label="Quieres comentar algo?."
-            error={ valuesWithLength.comment < 1 && error }
-            value={ comment }
-            onChange={ handleInputChange as ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>  }
-            sx={{
-              my: 2,
-              borderRadius: '5px',
-              backgroundColor: 'secondary.light',
-            }}
-          />
-          <TextField
-            color="success"
-            variant="filled"
-            name="username"
-            fullWidth
-            label="Escribe un nombre"
-            error={ valuesWithLength.username < 1 && error }
-            value={ username }
-            onChange={ handleInputChange as ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> }
-            sx={{
-              my: 2,
-              borderRadius: '5px',
-              backgroundColor: 'secondary.light',
-            }}
-          />
-          <TextField
-            color="success"
-            variant="filled"
-            name="email"
-            type="email"
-            helperText="* El email no se mostrara publicamente *"
-            fullWidth
-            label="Escribe tu email"
-            error={ valuesWithLength.email < 1 && error }
-            value={ email }
-            onChange={ handleInputChange as ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> }
-            sx={{
-              my: 2,
-              borderRadius: '5px',
-              backgroundColor: 'secondary.light',
-            }}
-          />
+        <TextField
+          name="comment"
+          variant="filled"
+          color="success"
+          multiline
+          rows={3}
+          fullWidth
+          label="Quieres comentar algo?."
+          error={ valuesWithLength.comment < 1 && error }
+          value={ comment }
+          onChange={ handleInputChange as ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>  }
+          sx={{
+            my: 2,
+            borderRadius: '5px',
+            backgroundColor: 'secondary.light',
+          }}
+        />
+        <TextField
+          color="success"
+          variant="filled"
+          name="username"
+          fullWidth
+          label="Escribe un nombre"
+          error={ valuesWithLength.username < 1 && error }
+          value={ username }
+          onChange={ handleInputChange as ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> }
+          sx={{
+            my: 2,
+            borderRadius: '5px',
+            backgroundColor: 'secondary.light',
+          }}
+        />
+        <TextField
+          color="success"
+          variant="filled"
+          name="email"
+          type="email"
+          helperText="* El email no se mostrara publicamente *"
+          fullWidth
+          label="Escribe tu email"
+          error={ valuesWithLength.email < 1 && error }
+          value={ email }
+          onChange={ handleInputChange as ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> }
+          sx={{
+            my: 2,
+            borderRadius: '5px',
+            backgroundColor: 'secondary.light',
+          }}
+        />
 
-          <Chip 
-            label="Todos los campos son obligatorios!" 
-            color="error" 
-            sx={{ 
-              my:1, 
-              display: error ? 'flex' : 'none' 
-            }} 
-          />
+        <Chip 
+          label="Todos los campos son obligatorios!" 
+          color="error" 
+          sx={{ 
+            my:1, 
+            display: error ? 'flex' : 'none' 
+          }} 
+        />
 
-          <Button fullWidth color="success" variant="contained" type="submit" >
-            Enviar!
-          </Button> 
-        </Collapse>
+        <Button fullWidth color="success" variant="contained" type="submit" >
+          Enviar!
+        </Button> 
       </Grid>
     </Grid>
   )

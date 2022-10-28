@@ -13,21 +13,12 @@ export const ChampionLastView:FC<TProps> = ({champions}) => {
   
   const [championLastView, setChampionLastView] = useState(champions[0])
 
-  const [checked, setChecked] = useState(false);
-
-  const handleClick = () => {
-
-    setChecked(!checked)
-  }
-
   useEffect(()=> {
     const championLocalStorage = localStorage.getItem('ChampLastView') || champions[0].id;
 
     if(championLocalStorage) {
 
       const lastView: ChampionsData[] = champions.filter( champion => champion.id === championLocalStorage);
-      
-      setChecked(true);
       return setChampionLastView(lastView[0])    
     }
 
@@ -45,20 +36,9 @@ export const ChampionLastView:FC<TProps> = ({champions}) => {
           borderRadius: '10px'
         }}
       >
-        <Stack direction="row" alignItems="center" justifyContent="space-between" >
-          <Typography component="h2" variant="h4">Último campeón visto</Typography>
-          <Button onClick={ handleClick } size="large" endIcon={ checked ? <KeyboardArrowUp /> : <KeyboardArrowDown /> }>
-            { checked ? "Ocultar" :  "Mostrar" }
-          </Button>
-        </Stack>
+        <Typography component="h2" variant="h4">Último campeón visto</Typography>
       </Grid>
-      
-      <Grid item xs={12} >
-          <Collapse in={checked}>
-            <ChampionCard champion={championLastView} />
-          </Collapse>
-      </Grid>
-      
+        <ChampionCard champion={championLastView} />  
     </Grid>
   )
 }
