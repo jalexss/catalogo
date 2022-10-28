@@ -46,3 +46,4 @@ const createCommentInChampion = async( req: NextApiRequest, res: NextApiResponse
     return res.status(500).json({ message: 'algo salio mal, revisar consola del servidor', ok: false });
   }
 }
+

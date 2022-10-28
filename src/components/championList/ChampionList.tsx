@@ -5,10 +5,10 @@ import { ChampionsData } from "../../interfaces";
 import { ChampionCard } from "../championCard/ChampionCard"
 
 interface TProps {
-  allChampions: ChampionsData[];
+  champions: ChampionsData[];
 }
 
-export const ChampionList:FC<TProps> = ({ allChampions }) => {
+export const ChampionList:FC<TProps> = ({ champions: allChampions }) => {
 
   const [champions, setChampions] = useState(allChampions);
 

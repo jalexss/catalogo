@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { ChangeEventHandler, FC, FormEvent, useEffect, useState } from "react"
 import { Button, Chip, Grid, TextField, Typography } from '@mui/material';
 
@@ -8,11 +7,10 @@ import { comentariosApi } from "../../../api";
 
 interface Props{
   championId: string;
+  onCommentsUpdate: Function;
 }
 
-export const CreateComment:FC<Props> = ({ championId }) => {
-
-  const router = useRouter();
+export const CreateComment:FC<Props> = ({ championId, onCommentsUpdate }) => {
 
   const [ inputValues, handleInputChange, valuesWithLength ] = useForm({
     comment: '',
@@ -42,7 +40,7 @@ export const CreateComment:FC<Props> = ({ championId }) => {
     try {
       const { data }  = await comentariosApi.post<IComment>(`/comments`, newData);
       if( data.ok ) {
-        router.push(`/champion`);
+        onCommentsUpdate();
       }
     } catch (error) {
       console.log(error)
