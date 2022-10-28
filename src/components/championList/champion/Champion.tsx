@@ -7,7 +7,10 @@ import {
   ChampionDescription, 
   ChampionInformation, 
   ChampionAllyTips,
-  ChampionEnemyTips, 
+  ChampionEnemyTips,
+  ChampionTags,
+  ChampionSkills,
+  ChampionStats, 
 } from "./";
 
 
@@ -31,6 +34,12 @@ export const Champion:FC<TProps> = ({champion}) => {
       <ChampionDescription champion={champion} />
 
       <ChampionInformation champion={champion} />
+
+      <ChampionTags champion={champion} />
+
+      <ChampionStats champion={champion} />
+
+      <ChampionSkills champion={champion} />
 
       <ChampionAllyTips champion={champion} />
 

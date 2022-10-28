@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, CircularProgress, Grid, Typography } from "@mui/material";
 
 import { IComments } from "../../../interfaces";
 import { CommentsList } from "./CommentsList";
@@ -7,9 +7,13 @@ import { CommentsList } from "./CommentsList";
 
 interface Props {
   comments: IComments[];
+  isLoading: boolean;
 }
 
-export const Comments:FC<Props> = ({ comments }) => {
+export const Comments:FC<Props> = ({ comments, isLoading }) => {
+
+  //if( isLoading ) return  <CircularProgress /> 
+
   return (
     <Grid 
       item
@@ -29,28 +33,41 @@ export const Comments:FC<Props> = ({ comments }) => {
       >
         <Typography component="h2" variant="h4">Todos los comentarios</Typography>
 
-        <Box sx={{ display: comments.length > 0 ? 'block' : 'none' }} >
-          {
-            comments.map( (comment, index) => (
-              <CommentsList  key={index} comment={comment}/>
-            ))
-          }
-        </Box>
-        <Box sx={{ display: comments.length < 1 ? 'block' : 'none'}}>
-          <Box 
-            sx={{
-              py: 1,
-              px: 2,
-              my: 2,
-              backgroundColor: 'secondary.dark', 
-              borderRadius: '10px',
-            }}
-          >
-            <Typography component="h5" variant="h6" color="primary">
-              No hay comentarios!.
-            </Typography>
-          </Box>
-        </Box>
+        {
+          !isLoading 
+          ? 
+            (
+              <>
+                <Box sx={{ display: comments.length > 0 ? 'block' : 'none' }} >
+                  {
+                    comments.map( (comment, index) => (
+                      <CommentsList  key={index} comment={comment}/>
+                    ))
+                  }
+                </Box>
+                <Box sx={{ display: comments.length < 1 ? 'block' : 'none'}}>
+                  <Box 
+                    sx={{
+                      py: 1,
+                      px: 2,
+                      my: 2,
+                      backgroundColor: 'secondary.dark', 
+                      borderRadius: '10px',
+                    }}
+                  >
+                    <Typography component="h5" variant="h6" color="primary">
+                      No hay comentarios!.
+                    </Typography>
+                  </Box>
+                </Box>
+              </>
+            ) 
+          : (
+            <Grid sx={{ display: 'flex', justifyContent: 'center' }}>
+              <CircularProgress />
+            </Grid>
+          )
+        }
       </Grid>
     </Grid>
   )

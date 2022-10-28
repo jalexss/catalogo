@@ -16,6 +16,8 @@ interface TProps {
 
 const ChampionInfoPage:FC<TProps> = ({ champion, comments }) => {
   
+  console.log(champion);
+
   useEffect(()=> {
 
     localStorage.setItem('ChampLastView', champion.id)

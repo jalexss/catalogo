@@ -14,6 +14,7 @@ export const ChampionDefaultImage:FC<TProps> = ({ champion }) => {
         sx={{
           width: { xs: '100%', lg: '80%'},
           maxHeight: { xs: 400, md: 700 , lg: '80%' },
+          borderRadius: '10px',
         }}
         src={ champion.images.default } 
         alt={`Default visual art - ${champion.id}`} 

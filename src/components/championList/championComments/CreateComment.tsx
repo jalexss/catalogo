@@ -8,9 +8,11 @@ import { comentariosApi } from "../../../api";
 interface Props{
   championId: string;
   onCommentsUpdate: Function;
+  isLoading: boolean;
+  isLoadingActive: Function;
 }
 
-export const CreateComment:FC<Props> = ({ championId, onCommentsUpdate }) => {
+export const CreateComment:FC<Props> = ({ championId, onCommentsUpdate, isLoading, isLoadingActive }) => {
 
   const [ inputValues, handleInputChange, valuesWithLength ] = useForm({
     comment: '',
@@ -25,6 +27,9 @@ export const CreateComment:FC<Props> = ({ championId, onCommentsUpdate }) => {
   const handleSubmit = async(event: FormEvent<HTMLFormElement>) => {
 
     event.preventDefault();
+
+    isLoadingActive(true);
+
     const newData = {
       comment, 
       username, 
@@ -89,6 +94,10 @@ export const CreateComment:FC<Props> = ({ championId, onCommentsUpdate }) => {
           error={ valuesWithLength.comment < 1 && error }
           value={ comment }
           onChange={ handleInputChange as ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>  }
+          inputProps={{
+            minLength: "10",
+            maxLength:"344"
+          }}
           sx={{
             my: 2,
             borderRadius: '5px',
@@ -104,6 +113,10 @@ export const CreateComment:FC<Props> = ({ championId, onCommentsUpdate }) => {
           error={ valuesWithLength.username < 1 && error }
           value={ username }
           onChange={ handleInputChange as ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> }
+          inputProps={{
+            minLength: "1",
+            maxLength:"30"
+          }}
           sx={{
             my: 2,
             borderRadius: '5px',
@@ -137,7 +150,7 @@ export const CreateComment:FC<Props> = ({ championId, onCommentsUpdate }) => {
           }} 
         />
 
-        <Button fullWidth color="success" variant="contained" type="submit" >
+        <Button disabled={isLoading} fullWidth color="success" variant="contained" type="submit" >
           Enviar!
         </Button> 
       </Grid>

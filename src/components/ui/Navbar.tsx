@@ -40,7 +40,22 @@ export const Navbar:FC = () => {
                 </Typography>
               </Link>
             </NextLink>
+            
           </Box>
+        </Grid>
+        <Grid 
+          container 
+          justifyContent="flex-end"
+          alignItems="center"
+        >
+          <NextLink href="https://www.riotgames.com/es" passHref>
+            <Box
+              component="img" 
+              alt="Logo de riotgames" 
+              src="/svg/riotgames.svg" 
+              style={{ width: '40px', height: '40px', display: 'flex-end', cursor: 'pointer' }} 
+            />
+          </NextLink>
         </Grid>
         
       </Toolbar>
