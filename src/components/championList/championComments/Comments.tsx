@@ -1,7 +1,5 @@
-import { FC, useState } from "react"
-import { Box, Button, Collapse, Grid, Stack, Typography } from "@mui/material";
-//import { KeyboardArrowDown } from "@mui/icons-material"
-import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
+import { FC } from "react"
+import { Box, Grid, Typography } from "@mui/material";
 
 import { IComments } from "../../../interfaces";
 import { CommentsList } from "./CommentsList";
@@ -29,9 +27,8 @@ export const Comments:FC<Props> = ({ comments }) => {
           backgroundColor: 'secondary.main',
         }}
       >
-        <Stack direction="row" alignItems="center" justifyContent="space-between" >
-          <Typography component="h2" variant="h4">Todos los comentarios</Typography>
-        </Stack>
+        <Typography component="h2" variant="h4">Todos los comentarios</Typography>
+
         <Box sx={{ display: comments.length > 0 ? 'block' : 'none' }} >
           {
             comments.map( (comment, index) => (

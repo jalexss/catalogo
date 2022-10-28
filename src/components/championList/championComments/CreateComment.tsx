@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { ChangeEventHandler, FC, FormEvent, useEffect, useState } from "react"
-import { Button, Chip, Collapse, Grid, Stack, TextField, Typography } from '@mui/material';
-import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
+import { Button, Chip, Grid, TextField, Typography } from '@mui/material';
 
 import { useForm } from "../../../hooks/useForm";
 import { IComment } from "../../../interfaces";
@@ -43,7 +42,7 @@ export const CreateComment:FC<Props> = ({ championId }) => {
     try {
       const { data }  = await comentariosApi.post<IComment>(`/comments`, newData);
       if( data.ok ) {
-        router.push(`/champion/${championId}`);
+        router.push(`/champion`);
       }
     } catch (error) {
       console.log(error)

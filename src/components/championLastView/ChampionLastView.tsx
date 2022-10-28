@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from "react"
-import { Button, Collapse, Grid, Stack, Typography } from "@mui/material"
-import { KeyboardArrowUp, KeyboardArrowDown } from "@mui/icons-material";
+import { Grid, Typography } from "@mui/material"
 
 import { ChampionCard } from "../championCard/ChampionCard"
 import { ChampionsData } from "../../interfaces";

@@ -6,6 +6,7 @@ import championApi from '../../api/championApi';
 import { ChampionListResponse, ChampionsData } from "../../interfaces";
 import { ChampionLastView } from "../../components/championLastView/ChampionLastView";
 import { Box } from "@mui/material";
+import { memo } from "react";
 
 interface TProps {
   champions: ChampionsData[]; //TODO: CAMBIAR
@@ -53,5 +54,4 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   }
 }
 
-
-export default championPage
+export default memo(championPage)

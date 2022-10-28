@@ -1,6 +1,5 @@
 import { ChangeEvent, FC, useState } from "react";
-import { Button, Collapse, Grid, Stack, TextField, Typography } from "@mui/material";
-import { KeyboardArrowUp, KeyboardArrowDown } from "@mui/icons-material";
+import { Grid, Stack, TextField, Typography } from "@mui/material";
 
 import { ChampionsData } from "../../interfaces";
 import { ChampionCard } from "../championCard/ChampionCard"

@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, memo, useEffect } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { Grid } from "@mui/material"
 
@@ -49,7 +49,6 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
   }
 }
 
-
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { name } = params as { name: string };
@@ -87,4 +86,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 
-export default ChampionInfoPage
+export default memo(ChampionInfoPage)
