@@ -37,8 +37,8 @@ const Home: NextPage = () => {
                 <Typography component="h1" variant="h1" color="primary" sx={{ mb: 1 }} >
                   Bienvenido a Rootlab League of Legends
                 </Typography>
-                <Typography component="h1" variant="h3" color="error" >
-                  Jesus Soledad
+                <Typography component="h1" variant="h3" >
+                  Jesus Alexander Soledad
                 </Typography>
               </Box>
           </Grid>
