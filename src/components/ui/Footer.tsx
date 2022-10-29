@@ -22,7 +22,7 @@ export const Footer:FC = () => {
           }}
         >
           <Typography variant="body1">Contact:</Typography>
-          <Stack>
+          <Stack direction="row" spacing={2} >
             <Typography variant="overline">ja.soledads@gmail.com</Typography>
             <Typography variant="overline">github.com/jalexss/catalogo</Typography>
           </Stack>
