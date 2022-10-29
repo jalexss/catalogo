@@ -38,7 +38,7 @@ const Home: NextPage = () => {
                   Bienvenido a Rootlab League of Legends
                 </Typography>
                 <Typography component="h1" variant="h3" color="error" >
-                  Campeones
+                  Jesus Soledad
                 </Typography>
               </Box>
           </Grid>
