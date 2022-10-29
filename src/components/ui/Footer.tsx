@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Box, Grid, Typography } from "@mui/material"
+import { Box, Grid, Stack, Typography } from "@mui/material"
 
 
 export const Footer:FC = () => {
@@ -22,7 +22,10 @@ export const Footer:FC = () => {
           }}
         >
           <Typography variant="body1">Contact:</Typography>
-          <Typography variant="overline">ja.soledads@gmail.com</Typography>
+          <Stack>
+            <Typography variant="overline">ja.soledads@gmail.com</Typography>
+            <Typography variant="overline">github.com/jalexss/catalogo</Typography>
+          </Stack>
           <Typography variant="body2" color="text.secondary">
             {'Copyright © '}
             {new Date().getFullYear()}
